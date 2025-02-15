@@ -9,6 +9,11 @@ function pathResolve(dir: string) {
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@services': pathResolve('src/services'),
+    },
+  },
   base: '/',
   build: {
     outDir: 'dist',
